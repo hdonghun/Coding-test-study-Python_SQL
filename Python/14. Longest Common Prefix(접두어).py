@@ -49,3 +49,5 @@ class Solution:
                 if other[i] != ch: # 동일한 위치에 있는 문자와 비교해서 다르다면
                     return shortest[:i] # 다르기 전까지의 문자만 return
         return shortest
+
+# enumerate 사용하는법을 배웠다.
