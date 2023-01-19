@@ -27,3 +27,4 @@ class Solution:
             return True # for loop을 정상적으로 마치면 Valid parentheses.
 
         
+#출처: https://daebaq27.tistory.com/38
