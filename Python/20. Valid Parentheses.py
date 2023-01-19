@@ -25,3 +25,5 @@ class Solution:
 
         else:
             return True # for loop을 정상적으로 마치면 Valid parentheses.
+
+        
