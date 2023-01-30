@@ -12,7 +12,7 @@
 # Explanation: Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
 # It does not matter what you leave beyond the returned k (hence they are underscores).
 
-
+#1.
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         if len(nums)==0: return 0
@@ -25,6 +25,26 @@ class Solution:
                 nums[i]=nums[j] # Swap
         
         return i+1
+        #루프를 벗어나면 자동으로 멈추기 떄문에
+        
+        
+#2. 
+#조금 다르게
+    class Solution:
+        def removeDuplicates(self, nums: List[int]) -> int:
+            
+            #포인트 L , M
+            # L(인덱스)를 욺직여서....!
+            l = 1
+            for r in range(1,len(num)):
+                if num[r] != num[r-1]:
+                   num[l] = num[r]
+                   l +=1
+            return l
+
+
+
+
 
 # Time complexity : O(N)
 
@@ -33,3 +53,4 @@ class Solution:
 # 정렬된 결과를 assign할 l-value는 필요 없습니다.
 
 
+# 강의 영상 참조 : https://www.youtube.com/watch?v=DEJAZBq0FDA
