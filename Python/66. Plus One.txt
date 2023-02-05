@@ -1,0 +1,64 @@
+# 출처: https://leetcode.com/problems/plus-one/
+
+# reverse()
+# array = [1, 5, 3, 9, 7, 2]
+# array2 = array.reverse()
+# print("array가 직접 역순이 됩니다 :",array)
+# # > array가 직접 역순이 됩니다 : [2, 7, 9, 3, 5, 1]
+# print("array2에는 역순된 array가 들어가지 않습니다 :",array2)
+# # > array2에는 역순된 array가 들어가지 않습니다 : None
+
+# sorted()
+# array = [1, 5, 3, 9, 7, 2]
+# array2 = sorted(array)
+# print("array는 역순이 되지 않습니다 :",array)
+# # > array는 역순이 되지 않습니다 : [1, 5, 3, 9, 7, 2]
+# print("array2에는 역순된 array가 들어갑니다 :",array2)
+# # > array2에는 역순된 array가 들어갑니다 : [2, 7, 9, 3, 5, 1]
+
+# 숫자를 각 자리수의 list 로 변환: list(map(int, str(n)))
+# list(map(int, str(n)))
+# n = 12345
+# n_list = list(map(int, str(n)))
+# // [1, 2, 3, 4, 5]
+
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+
+        digits2 = digits.reverse()
+        sum=0
+        for i in range(0, len(digits)) :
+            if((digits[i]//(10**(i))) == 0):
+                sum += digits[i] * (10**(i))
+            else:
+                sum += digits[i]
+
+        sum += 1
+        n_list = list(map(int, str(sum)))
+
+        return n_list
+
+# 다른 사람이 푼 방법 확인
+# 출처: https://www.google.com/search?q=66.+plus+one+python&oq=66.+Plus+One+py&aqs=chrome.0.69i59j69i57j69i60j69i61l2.1935j0j4&sourceid=chrome&ie=UTF-8#fpstate=ive&vld=cid:7b4f8928,vid:jIaA8boiG1s
+
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        digits = digits[::-1]
+        one, i = 1, 0
+
+        while one:
+            if i < len(digits):
+                if digits[i] == 9:
+                    digits[i] == 0
+                else:
+                    digits[i] += 1
+                    one = 0
+            else:
+                digits.append(1)
+                one = 0
+            i += 1
+        return digits[::-1]
+
+
+
