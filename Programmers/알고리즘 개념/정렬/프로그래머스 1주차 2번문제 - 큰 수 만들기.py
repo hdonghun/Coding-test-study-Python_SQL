@@ -28,6 +28,6 @@ def solution(number, k):
             break            
         collected.append(num) # if문이 없더라도 이어붙여서 작동함. 
 
-    collected   = collected[:-k] if k > 0 else collected         #만약에 불필요한 값들이 있을때, 빼주기
+    collected   = collected[:-k] if k > 0 else collected         #만약에 불필요한 값들이 있을때, 빼주기 ex) numbers =[9,8,7,6] 이면 뺴는 거 없이 그대로 다 들어가기 때문에. 그럴떄는 k만큼 뒤에서 뺴야된다.!
     answer = ''.join(collected) #리스트에 하나하나씩 담겨있기 떄문에, ''.join으로 다 같이 넣어주기
     return answer
